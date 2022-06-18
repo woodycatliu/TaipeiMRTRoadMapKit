@@ -1,6 +1,11 @@
 # TaipeiMRTRoadMapKit
 ### SwiftUI
 
+### 安裝  
+ 1. clone
+ 2. add package in Xcode
+
+
 ## 捷運路線圖選擇器  
 
 ### 功能  
