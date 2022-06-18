@@ -102,6 +102,7 @@ public struct TouchLocatingView: UIViewRepresentable {
             }
             
             if limitToBounds == false || bounds.contains(location) {
+                print("location:", location)
                 onUpdate?(CGPoint(x: round(location.x), y: round(location.y)), bounds.size)
             }
         }

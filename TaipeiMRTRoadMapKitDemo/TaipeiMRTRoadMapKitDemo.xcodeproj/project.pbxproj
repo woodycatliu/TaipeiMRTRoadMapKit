@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EFC2F040285D906300978747 /* TaipeiMRTRoadMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EFC2F03F285D906300978747 /* TaipeiMRTRoadMapKit */; };
 		EFF1727A285C4F62003B8E09 /* TaipeiMRTRoadMapKitDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF17279285C4F62003B8E09 /* TaipeiMRTRoadMapKitDemoApp.swift */; };
 		EFF1727C285C4F62003B8E09 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF1727B285C4F62003B8E09 /* ContentView.swift */; };
 		EFF1727E285C4F63003B8E09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFF1727D285C4F63003B8E09 /* Assets.xcassets */; };
@@ -14,7 +15,6 @@
 		EFF1728B285C4F63003B8E09 /* TaipeiMRTRoadMapKitDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF1728A285C4F63003B8E09 /* TaipeiMRTRoadMapKitDemoTests.swift */; };
 		EFF17295285C4F63003B8E09 /* TaipeiMRTRoadMapKitDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF17294285C4F63003B8E09 /* TaipeiMRTRoadMapKitDemoUITests.swift */; };
 		EFF17297285C4F63003B8E09 /* TaipeiMRTRoadMapKitDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF17296285C4F63003B8E09 /* TaipeiMRTRoadMapKitDemoUITestsLaunchTests.swift */; };
-		EFF172AA285C50B9003B8E09 /* TaipeiMRTRoadMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EFF172A9285C50B9003B8E09 /* TaipeiMRTRoadMapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,9 +46,7 @@
 		EFF17294285C4F63003B8E09 /* TaipeiMRTRoadMapKitDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaipeiMRTRoadMapKitDemoUITests.swift; sourceTree = "<group>"; };
 		EFF17296285C4F63003B8E09 /* TaipeiMRTRoadMapKitDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaipeiMRTRoadMapKitDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EFF172A4285C4FC8003B8E09 /* TaipeiMRTRoadMapKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = TaipeiMRTRoadMapKit; path = ..; sourceTree = "<group>"; };
-		EFF172A5285C4FE5003B8E09 /* TaipeiMRTRoadMapKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = TaipeiMRTRoadMapKit; path = ..; sourceTree = "<group>"; };
 		EFF172A6285C4FF7003B8E09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		EFF172A7285C5052003B8E09 /* TaipeiMRTRoadMapKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = TaipeiMRTRoadMapKit; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFF172AA285C50B9003B8E09 /* TaipeiMRTRoadMapKit in Frameworks */,
+				EFC2F040285D906300978747 /* TaipeiMRTRoadMapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,8 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				EFF172A4285C4FC8003B8E09 /* TaipeiMRTRoadMapKit */,
-				EFF172A5285C4FE5003B8E09 /* TaipeiMRTRoadMapKit */,
-				EFF172A7285C5052003B8E09 /* TaipeiMRTRoadMapKit */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -170,7 +166,7 @@
 			);
 			name = TaipeiMRTRoadMapKitDemo;
 			packageProductDependencies = (
-				EFF172A9285C50B9003B8E09 /* TaipeiMRTRoadMapKit */,
+				EFC2F03F285D906300978747 /* TaipeiMRTRoadMapKit */,
 			);
 			productName = TaipeiMRTRoadMapKitDemo;
 			productReference = EFF17276285C4F62003B8E09 /* TaipeiMRTRoadMapKitDemo.app */;
@@ -618,7 +614,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EFF172A9285C50B9003B8E09 /* TaipeiMRTRoadMapKit */ = {
+		EFC2F03F285D906300978747 /* TaipeiMRTRoadMapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TaipeiMRTRoadMapKit;
 		};

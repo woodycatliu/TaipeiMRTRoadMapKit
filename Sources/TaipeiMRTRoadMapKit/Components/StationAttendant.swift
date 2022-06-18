@@ -49,7 +49,7 @@ public struct StationAttendant: PositionChecker {
         })
     }
     public func isContain(sizeOfView size: CGSize, touchPosition point: CGPoint) -> Bool {
-        return convertFrameFrromView(size: size).contains(point)
+        return convertFrameFrromView(size: size).insetBy(dx: -5, dy: -5).contains(point)
     }
     
 }
