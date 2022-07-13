@@ -9,23 +9,27 @@ import SwiftUI
 
 public struct StationPicker: View {
     public let stationSearcher: StationSearher
-    @Binding public var stationsPosition: PositionChecker?
+    @Binding public var stationsPositions: [PositionChecker]
     @State public var drawViews: [DrawOnImage<AnyView>] = []
     
-    public init(_ searcher: StationSearher, station: Binding<PositionChecker?>) {
+    public init(_ searcher: StationSearher, station: Binding<[PositionChecker]>) {
         self.stationSearcher = searcher
-        self._stationsPosition = station
+        self._stationsPositions = station
     }
     
-    public init(station: Binding<PositionChecker?>) {
-        self.init(DefaultSearcher(), station: station)
+    public init(station: Binding<[PositionChecker]>) {
+        self.init(DefaultSearcher(selectedPolicy: MutiSelectedPolicy()), station: station)
     }
     
     public var body: some View {
             ImageZoomTapInsidePointView(drawViews: $drawViews, image: UIImage("routemap2020", ofType: "png")!, minimumScale: 1, maximumScale: 3) { location, size in
                 Logger.touchLog(location, size)
-                stationsPosition = stationSearcher.findStation(Stations.StationPositions, point: location, size: size)
-                drawViews = stationSearcher.drawOnStationRoadMap(stationsPosition == nil ? [] : [stationsPosition!.convertFrameFrromView(size: size)])
+//                stationsPositions = stationSearcher.findStation(Stations.StationPositions, point: location, size: size)
+                if let station = stationSearcher.findStation(Stations.StationPositions, point: location, size: size) {
+                    stationSearcher.updateSelected(store: &stationsPositions, selected: station)
+                }
+                
+                drawViews = stationSearcher.drawOnStationRoadMap(stationsPositions.isEmpty ? [] : stationsPositions.map { $0.convertFrameFrromView(size: size) })
             }
        
     }
@@ -33,9 +37,9 @@ public struct StationPicker: View {
 
 
 struct StationPicker_Previews: PreviewProvider {
-    @State var station: PositionChecker?
+    @State var stations: [PositionChecker] = []
     static var previews: some View {
-        StationPicker(station: StationPicker_Previews().$station)
+        StationPicker(station: StationPicker_Previews().$stations)
     }
 }
 

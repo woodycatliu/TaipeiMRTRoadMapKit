@@ -31,9 +31,16 @@ extension StationLocation {
 }
 
 public protocol PositionChecker {
+    var id: String { get }
     func getStations()-> [StationLocation]
     func convertFrameFrromView(size: CGSize)-> CGRect
     func isContain(sizeOfView size: CGSize, touchPosition point: CGPoint)-> Bool
+}
+
+public extension PositionChecker {
+    var id: String {
+        return getStations().map { $0.id }.joined()
+    }
 }
 
 public struct StationAttendant: PositionChecker {

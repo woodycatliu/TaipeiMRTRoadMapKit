@@ -9,10 +9,10 @@ import SwiftUI
 import TaipeiMRTRoadMapKit
 
 struct ContentView: View {
-    @State var station: PositionChecker?
+    @State var stations: [PositionChecker]
     var body: some View {
         NavigationView {
-            StationPicker(station: $station)
+            StationPicker(stations: $stations)
                 .clipped()
                 .padding()
                 .ignoresSafeArea()
