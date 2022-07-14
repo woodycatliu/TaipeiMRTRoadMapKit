@@ -9,15 +9,18 @@ import SwiftUI
 import TaipeiMRTRoadMapKit
 
 struct ContentView: View {
-    @State var stations: [PositionChecker]
+    @State var stations: [PositionChecker] = []
     var body: some View {
-        NavigationView {
+        VStack {
+            Text(stations.isEmpty ? "" : stations.map { $0.getStations().map { $0.id }.joined(separator: ", ") }.joined(separator: ", "))
+                .lineLimit(2)
+                .frame(width: nil, height: 60, alignment: .leading)
+                .font(.largeTitle)
+                .scaledToFit()
+                .minimumScaleFactor(0.01)
             StationPicker(stations: $stations)
                 .clipped()
-                .padding()
                 .ignoresSafeArea()
-                .navigationTitle(station == nil ? "" : station!.getStations().map { $0.id }.joined(separator: ", "))
-                .navigationViewStyle(.automatic)
         }
     }
 }

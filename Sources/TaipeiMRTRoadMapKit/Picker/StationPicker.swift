@@ -12,13 +12,13 @@ public struct StationPicker: View {
     @Binding public var stationsPositions: [PositionChecker]
     @State public var drawViews: [DrawOnImage<AnyView>] = []
     
-    public init(_ searcher: StationSearher, station: Binding<[PositionChecker]>) {
+    public init(_ searcher: StationSearher, stations: Binding<[PositionChecker]>) {
         self.stationSearcher = searcher
-        self._stationsPositions = station
+        self._stationsPositions = stations
     }
     
-    public init(station: Binding<[PositionChecker]>) {
-        self.init(DefaultSearcher(selectedPolicy: MutiSelectedPolicy()), station: station)
+    public init(stations: Binding<[PositionChecker]>) {
+        self.init(DefaultSearcher(selectedPolicy: MutiSelectedPolicy()), stations: stations)
     }
     
     public var body: some View {
@@ -39,7 +39,7 @@ public struct StationPicker: View {
 struct StationPicker_Previews: PreviewProvider {
     @State var stations: [PositionChecker] = []
     static var previews: some View {
-        StationPicker(station: StationPicker_Previews().$stations)
+        StationPicker(stations: StationPicker_Previews().$stations)
     }
 }
 
