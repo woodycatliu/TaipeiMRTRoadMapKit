@@ -105,7 +105,7 @@ public struct ImageZoomTapInsidePointView: View {
     private func updateLocation(_ location: CGPoint, _ size: CGSize) {
         point = location
         perform?(location, size)
-        orignImgSize = size
+        OrignImgSize = size
     }
     
     static public var DefautGet: ()-> [DrawOnImage<AnyView>] {
