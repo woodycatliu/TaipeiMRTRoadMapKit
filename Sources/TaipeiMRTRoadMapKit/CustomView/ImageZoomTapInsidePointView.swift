@@ -7,6 +7,7 @@
 
 import SwiftUI
 #if canImport(UIKit)
+public var OrignImgSize: CGSize = .zero
 
 public struct DrawOnImage<Content: View>: View, Identifiable {
     public let id: String = UUID().uuidString
