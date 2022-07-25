@@ -31,7 +31,7 @@ public struct StationPicker: View {
                 
                 drawViews = stationSearcher.drawOnStationRoadMap(stationsPositions.isEmpty ? [] : stationsPositions.map { $0.convertFrameFrromView(size: size) })
             }.onAppear(perform: {
-                drawViews = stationSearcher.drawOnStationRoadMap(stationsPositions.isEmpty ? [] : stationsPositions.map { $0.convertFrameFrromView(size: .init(width: 761, height: 1020)) })
+                drawViews = stationSearcher.drawOnStationRoadMap(stationsPositions.isEmpty ? [] : stationsPositions.map { $0.convertFrameFrromView(size: OrignImgSize)) })
             })
        
     }
