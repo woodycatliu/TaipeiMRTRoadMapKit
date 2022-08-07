@@ -18,6 +18,12 @@ public struct StationLocation: Identifiable {
     public var id: String
     public var pointOfAbsolute: CGPoint
     public var sizeOFAbsolute: CGSize
+    
+    public init(id: String, pointOfAbsolute: CGPoint, sizeOFAbsolute: CGSize) {
+        self.id = id
+        self.pointOfAbsolute = pointOfAbsolute
+        self.sizeOFAbsolute = sizeOFAbsolute
+    }
 }
 
 extension StationLocation {
@@ -57,6 +63,10 @@ public struct StationAttendant: PositionChecker {
     }
     public func isContain(sizeOfView size: CGSize, touchPosition point: CGPoint) -> Bool {
         return convertFrameFrromView(size: size).insetBy(dx: -5, dy: -5).contains(point)
+    }
+    
+    public init(stations: [StationLocation]) {
+        self.stations = stations
     }
     
 }
